@@ -19,7 +19,7 @@ const content: Record<
   }
 > = {
   en: {
-    eyebrow: "AI Transformation Consulting",
+    eyebrow: "",
     title: "Reengineering enterprise operations for the AI era.",
     description:
       "Astraea helps organizations redesign workflows, identify high-value AI use cases, and implement intelligent systems that improve operational performance.",
@@ -32,8 +32,8 @@ const content: Record<
       "Practical AI transformation with measurable business value.",
   },
   zh: {
-    eyebrow: "AI 转型咨询",
-    title: "为 AI 时代重构企业运营。",
+    eyebrow: "",
+    title: "在AI时代重构企业运营。",
     description:
       "Astraea 帮助企业重新设计工作流程，识别高价值 AI 应用场景，并落地智能系统，从而提升运营效率与业务表现。",
     primaryCta: "开始沟通",
@@ -41,7 +41,7 @@ const content: Record<
     focusLabel: "重点",
     focusText: "战略、流程、系统与组织采用。",
     outcomeLabel: "成果",
-    outcomeText: "创造可衡量业务价值的 AI 转型落地。",
+    outcomeText: "创造可衡量业务价值的AI 转型落地。",
   },
 }
 
@@ -50,7 +50,7 @@ export default function Hero({ locale = "en" }: HeroProps) {
 
   return (
     <section id="about" className="bg-white">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 md:px-6 md:py-16 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 py-12 md:px-6 md:py-16 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500 md:text-sm">
             {text.eyebrow}
@@ -81,7 +81,7 @@ export default function Hero({ locale = "en" }: HeroProps) {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 md:p-7">
+        <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 md:p-7 lg:mt-10">
           <div className="space-y-5">
             <div>
               <p className="text-sm font-medium text-neutral-500">

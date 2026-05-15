@@ -9,7 +9,7 @@ export default function ServicesPage() {
       <Header />
 
       <PageHero
-        eyebrow="Services"
+        eyebrow="Service: From Chaos to clear, then to clean"
         title="AI consulting services built for practical business transformation."
         description="From strategy to implementation, we help teams identify, design, and deploy AI systems that create measurable value."
       />

@@ -24,9 +24,9 @@ const steps = [
 export default function MethodologySection() {
   return (
     <section id="methodology" className="border-b border-neutral-200 bg-white">
-      <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 lg:px-16">
-        <div className="mb-20">
-          <h2 className="text-5xl font-extrabold tracking-[-0.05em] text-black md:text-7xl">
+      <div className="mx-auto max-w-[1440px] px-6 py-8 md:px-12 lg:px-16">
+        <div className="mb-8">
+          <h2 className="text-[clamp(1.75rem,5.5vw,3.75rem)] font-extrabold tracking-[-0.03em] text-black leading-[0.96] max-w-[70ch] break-words">
             Methodology
           </h2>
         </div>
@@ -35,15 +35,15 @@ export default function MethodologySection() {
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className="grid gap-8 py-10 md:grid-cols-[160px_1fr_1.4fr] md:items-start"
+              className="grid gap-8 py-4 md:grid-cols-[96px_1fr_1.4fr] md:items-start"
             >
               <div className="text-lg text-neutral-400">0{index + 1}</div>
 
-              <h3 className="text-3xl font-semibold tracking-[-0.04em] text-black md:text-5xl">
+              <h3 className="text-2xl font-semibold tracking-[-0.02em] text-black md:text-5xl">
                 {step.title}
               </h3>
 
-              <p className="text-xl leading-relaxed tracking-[-0.02em] text-neutral-600 md:text-2xl">
+              <p className="text-xl leading-relaxed tracking-[-0.01em] text-neutral-600 md:text-2xl">
                 {step.description}
               </p>
             </div>

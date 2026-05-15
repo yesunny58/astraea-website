@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header"
 import PageHero from "@/components/layout/PageHero"
 import ContactSection from "@/components/sections/ContactSection"
+import FoundersSection from "@/components/sections/FoundersSection"
 
 export default function AboutPage() {
   return (
@@ -9,9 +10,11 @@ export default function AboutPage() {
 
       <PageHero
         eyebrow="About Astraea"
-        title="We help organizations turn AI ambition into measurable business outcomes."
+        title="We turn decades of hard‑earned experience into a guiding torch for enterprises."
         description="Astraea partners with leadership teams to design, implement, and scale AI-powered operating models."
       />
+
+      <FoundersSection />
 
       <ContactSection />
     </main>

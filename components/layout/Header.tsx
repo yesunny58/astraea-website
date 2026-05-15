@@ -2,6 +2,8 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
+
 
 type Locale = "en" | "zh"
 
@@ -28,6 +30,7 @@ const navItems: Record<Locale, { label: string; href: string }[]> = {
 
 export default function Header({ locale = "en" }: HeaderProps) {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   const isZh = locale === "zh"
 
@@ -40,31 +43,50 @@ export default function Header({ locale = "en" }: HeaderProps) {
       <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-20 md:px-6">
         <Link
           href={homeHref}
-          className="text-2xl font-bold tracking-tight text-black md:text-3xl"
+          className="inline-flex items-center gap-2 whitespace-nowrap text-2xl font-bold tracking-tight text-black md:text-3xl"
           onClick={() => setOpen(false)}
         >
-          Astraea
-          <sup className="ml-1 text-xs font-semibold">®</sup>
+          <img
+            src="/logo.png"
+            alt="Astraea Logo"
+            className="h-10 w-10 shrink-0 object-contain md:h-15 md:w-15"
+          />
+          <span className="relative inline-block pr-5 leading-none">
+            {isZh ? "艾序" : "Astraea"}
+            <sup className="ml-1 text-absolute right-0 -top-4 text-xs font-semibold leading-none">®</sup>
+          </span>
         </Link>
 
         {/* Desktop navigation */}
         <nav className="hidden items-center gap-10 md:flex">
-          {navItems[locale].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-base font-medium text-neutral-700 transition hover:text-black"
-            >
-              {item.label}
-            </Link>
-          ))}
+          <nav className="hidden items-center gap-10 md:flex">
+            {navItems[locale].map((item) => {
+              const isActive = pathname === item.href
 
-          <Link
-            href={languageHref}
-            className="rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-black transition hover:border-black hover:bg-neutral-50"
-          >
-            {languageLabel}
-          </Link>
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-base font-medium transition ${isActive
+                      ? "text-black bg-neutral-100 px-4 py-2 rounded-md"
+                      : "text-neutral-600 hover:text-black"
+                    }`}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
+
+            {/* Language Switch */}
+            <Link
+              href={languageHref}
+              className="ml-4 text-sm font-medium text-neutral-600 transition hover:text-black"
+            >
+              {languageLabel}
+            </Link>
+          </nav>
+
+
         </nav>
 
         {/* Mobile menu button */}
@@ -92,17 +114,22 @@ export default function Header({ locale = "en" }: HeaderProps) {
         {open && (
           <nav className="absolute right-5 top-full z-50 mt-3 w-56 rounded-2xl border border-neutral-200 bg-white p-5 shadow-xl md:hidden">
             <div className="flex flex-col gap-4">
-              {navItems[locale].map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="text-base font-medium text-neutral-700 transition hover:text-black"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems[locale].map((item) => {
+                const isActive = pathname === item.href
 
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`w-full px-4 py-2 text-base font-medium transition ${isActive
+                      ? "text-black bg-neutral-100 px-4 py-2 rounded-md shadow-sm"
+                      : "text-neutral-700 hover:text-black"
+                      }`}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              })}
               <Link
                 href={languageHref}
                 onClick={() => setOpen(false)}
@@ -114,6 +141,6 @@ export default function Header({ locale = "en" }: HeaderProps) {
           </nav>
         )}
       </div>
-    </header>
+    </header >
   )
 }
