@@ -13,20 +13,22 @@ export default function FoundersSection({
 
   const founders = [
     {
-      name: isZh ? "张三" : "Zhang San",
+      name: isZh ? "谭瑛" : "Cherry Tan",
       title: isZh ? "联合创始人 · 合伙人" : "Co‑Founder & Partner",
       image: "/founder1.jpg",
     },
     {
-      name: isZh ? "李四" : "Li Si",
+      name: isZh ? "李莎" : "Lisa Li",
       title: isZh ? "联合创始人 · 合伙人" : "Co‑Founder & Partner",
       image: "/founder2.jpg",
     },
+
     {
-      name: isZh ? "王五" : "Wang Wu",
+      name: isZh ? "叶志斌" : "Sunny Ye",
       title: isZh ? "联合创始人 · 合伙人" : "Co‑Founder & Partner",
       image: "/founder3.jpg",
     },
+
   ]
 
   return (
