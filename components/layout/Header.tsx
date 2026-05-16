@@ -58,8 +58,63 @@ export default function Header({ locale = "en" }: HeaderProps) {
         </Link>
 
         {/* Desktop navigation */}
+        
         <nav className="hidden items-center gap-10 md:flex">
-          <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-10 md:flex">
+          {navItems[locale].map((item) => {
+            const isActive = pathname === item.href
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-base font-medium transition ${isActive
+                  ? "text-black bg-neutral-100 px-4 py-2 rounded-md"
+                  : "text-neutral-600 hover:text-black"
+                  }`}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
+
+          {/* Language Switch */}
+          <Link
+            href={languageHref}
+            className="ml-4 text-sm font-medium text-neutral-600 transition hover:text-black"
+          >
+            {languageLabel}
+          </Link>
+        </nav>
+
+
+      </nav>
+
+      {/* Mobile menu button */}
+      <button
+        type="button"
+        className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 bg-white text-2xl leading-none text-black md:hidden"
+        onClick={() => setOpen((value) => !value)}
+        aria-label={isZh ? "切换导航菜单" : "Toggle navigation menu"}
+        aria-expanded={open}
+      >
+        {open ? "×" : "☰"}
+      </button>
+
+      {/* Click outside overlay */}
+      {open && (
+        <button
+          type="button"
+          aria-label={isZh ? "关闭导航菜单" : "Close navigation menu"}
+          className="fixed inset-0 z-40 cursor-default bg-transparent md:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
+      {/* Mobile floating menu */}
+      {open && (
+        <nav className="absolute right-5 top-full z-50 mt-3 w-56 rounded-2xl border border-neutral-200 bg-white p-5 shadow-xl md:hidden">
+          <div className="flex flex-col gap-4">
             {navItems[locale].map((item) => {
               const isActive = pathname === item.href
 
@@ -67,80 +122,26 @@ export default function Header({ locale = "en" }: HeaderProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-base font-medium transition ${isActive
-                      ? "text-black bg-neutral-100 px-4 py-2 rounded-md"
-                      : "text-neutral-600 hover:text-black"
+                  className={`w-full px-4 py-2 text-base font-medium transition ${isActive
+                    ? "text-black bg-neutral-100 px-4 py-2 rounded-md shadow-sm"
+                    : "text-neutral-700 hover:text-black"
                     }`}
                 >
                   {item.label}
                 </Link>
               )
             })}
-
-            {/* Language Switch */}
             <Link
               href={languageHref}
-              className="ml-4 text-sm font-medium text-neutral-600 transition hover:text-black"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex w-fit rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-black transition hover:border-black hover:bg-neutral-50"
             >
               {languageLabel}
             </Link>
-          </nav>
-
-
+          </div>
         </nav>
-
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 bg-white text-2xl leading-none text-black md:hidden"
-          onClick={() => setOpen((value) => !value)}
-          aria-label={isZh ? "切换导航菜单" : "Toggle navigation menu"}
-          aria-expanded={open}
-        >
-          {open ? "×" : "☰"}
-        </button>
-
-        {/* Click outside overlay */}
-        {open && (
-          <button
-            type="button"
-            aria-label={isZh ? "关闭导航菜单" : "Close navigation menu"}
-            className="fixed inset-0 z-40 cursor-default bg-transparent md:hidden"
-            onClick={() => setOpen(false)}
-          />
-        )}
-
-        {/* Mobile floating menu */}
-        {open && (
-          <nav className="absolute right-5 top-full z-50 mt-3 w-56 rounded-2xl border border-neutral-200 bg-white p-5 shadow-xl md:hidden">
-            <div className="flex flex-col gap-4">
-              {navItems[locale].map((item) => {
-                const isActive = pathname === item.href
-
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`w-full px-4 py-2 text-base font-medium transition ${isActive
-                      ? "text-black bg-neutral-100 px-4 py-2 rounded-md shadow-sm"
-                      : "text-neutral-700 hover:text-black"
-                      }`}
-                  >
-                    {item.label}
-                  </Link>
-                )
-              })}
-              <Link
-                href={languageHref}
-                onClick={() => setOpen(false)}
-                className="mt-2 inline-flex w-fit rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-black transition hover:border-black hover:bg-neutral-50"
-              >
-                {languageLabel}
-              </Link>
-            </div>
-          </nav>
-        )}
-      </div>
+      )}
+    </div>
     </header >
   )
 }

@@ -34,6 +34,7 @@ export const cases = [
     title: "AI Quality Inspection for Manufacturing",
     titleCn: "制造业 AI 质检升级",
     category: "Manufacturing",
+    categoryCn: "制造业",
     summary:
       "A manufacturing company reduced manual inspection workload and improved defect detection consistency through an AI-assisted quality inspection workflow.",
     summaryCn:
@@ -46,6 +47,7 @@ export const cases = [
     title: "Demand Forecasting for Retail Operations",
     titleCn: "零售运营需求预测",
     category: "Retail",
+    categoryCn: "零售业",
     summary:
       "A retail operator improved inventory planning by using AI-assisted demand forecasting across product categories and regional stores.",
     summaryCn:
@@ -58,6 +60,7 @@ export const cases = [
     title: "Internal AI Knowledge Base for Professional Services",
     titleCn: "专业服务企业内部 AI 知识库",
     category: "Professional Services",
+    categoryCn: "服务行业",
     summary:
       "A consulting-style organization built an internal knowledge assistant to help teams retrieve project knowledge, templates, and best practices faster.",
     summaryCn:
@@ -65,6 +68,32 @@ export const cases = [
     result: "45% faster knowledge retrieval",
     resultCn: "知识检索速度提升 45%",
   },
+  {
+    id: "operations-automation",
+    title: "Operations Team Automation",
+    titleCn: "运营团队自动化",
+    category: "Manufacturing",
+    categoryCn: "制造业",
+    summary:
+      "Designed automated workflows for high-frequency repetitive tasks, reducing manual processing time and improving cross-team collaboration efficiency.",
+    summaryCn:
+      "为高频重复任务设计自动化工作流，减少人工处理时间，并提高跨团队协作效率。",
+    result:  "38% reduction in manual processing time",
+    resultCn: "人工处理时间减少 38%",
+  },
+  {
+    id: "executive-dashboard",
+    title: "Executive Decision Dashboard",
+    titleCn: "管理层决策仪表盘",
+    category: "Data Intelligence in Manufacturing",
+    categoryCn: "制造业",
+    summary:
+      "Integrated fragmented data sources into a real-time executive dashboard, enabling leadership teams to identify issues faster and make informed decisions.",
+    summaryCn:
+      "整合分散数据源，构建面向管理层的实时指标系统，帮助团队更快发现问题并做出决策。",
+    result: "40% faster decision cycle",
+    resultCn: "决策周期缩短 40%",
+  },    
 ]
 
 export const posts = [

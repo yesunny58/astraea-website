@@ -39,7 +39,7 @@ const content: Record<
     primaryCta: "开始沟通",
     secondaryCta: "了解服务",
     focusLabel: "重点",
-    focusText: "战略、流程、系统与组织采用。",
+    focusText: "战略、流程、系统与组织变化。",
     outcomeLabel: "成果",
     outcomeText: "创造可衡量业务价值的AI 转型落地。",
   },
@@ -50,7 +50,7 @@ export default function Hero({ locale = "en" }: HeroProps) {
 
   return (
     <section id="about" className="bg-white">
-      <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 py-12 md:px-6 md:py-16 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 py-8 md:px-6 md:py-10 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500 md:text-sm">
             {text.eyebrow}
@@ -64,7 +64,7 @@ export default function Hero({ locale = "en" }: HeroProps) {
             {text.description}
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
               href="#contact"
               className="inline-flex h-11 items-center justify-center rounded-full bg-black px-6 text-sm font-semibold text-white transition hover:bg-neutral-800"
@@ -73,7 +73,8 @@ export default function Hero({ locale = "en" }: HeroProps) {
             </a>
 
             <a
-              href="#services"
+ //             href="#services"
+                href={locale === "zh" ? "/zh/services" : "/services"}
               className="inline-flex h-11 items-center justify-center rounded-full border border-neutral-300 px-6 text-sm font-semibold text-black transition hover:border-black"
             >
               {text.secondaryCta}
