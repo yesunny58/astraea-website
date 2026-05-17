@@ -1,5 +1,5 @@
 
-type Props = {
+type PageHeroProps = {
   eyebrow: string
   title: string
   description: string
@@ -11,7 +11,7 @@ export default function PageHero({
   title,
   description,
   locale = "en",
-}: Props) {
+}: PageHeroProps) {
   const isZh = locale === "zh"
 
   return (
