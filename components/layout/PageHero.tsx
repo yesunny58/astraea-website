@@ -1,3 +1,11 @@
+
+type Props = {
+  eyebrow: string
+  title: string
+  description: string
+  locale?: "en" | "zh"
+}
+
 export default function PageHero({
   eyebrow,
   title,
