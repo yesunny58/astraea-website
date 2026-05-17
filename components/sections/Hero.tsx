@@ -74,7 +74,7 @@ export default function Hero({ locale = "en" }: HeroProps) {
 
             <a
  //             href="#services"
-                href={locale === "zh" ? "/zh/services" : "/services"}
+                href={locale === "zh" ? "/zh/how-we-engage" : "/how-we-engage"}
               className="inline-flex h-11 items-center justify-center rounded-full border border-neutral-300 px-6 text-sm font-semibold text-black transition hover:border-black"
             >
               {text.secondaryCta}

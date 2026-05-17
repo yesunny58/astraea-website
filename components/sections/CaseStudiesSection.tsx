@@ -20,14 +20,14 @@ export default function CaseStudiesSection({ locale = "en" }: Props) {
             </p>
 
             <h2
-              className={`max-w-4xl font-extrabold tracking-[-0.05em] text-black ${isZh ? "text-4xl md:text-6xl leading-[1.5]" : "text-5xl md:text-7xl"}`}
+              className={`max-w-4xl font-bold tracking-[-0.05em] text-black ${isZh ? "text-4xl md:text-6xl leading-[1.5]" : "text-5xl md:text-7xl"}`}
             >
               {isZh
                 ? (
                   <>
-                    真实业务场景中的 
+                    AI如何在真实业务场景中产生可衡量的影响。 
                     <br className="hidden md:block" />
-                    AI实践成果。
+                    
                   </>
                 )
                 : "Practical AI results across real business scenarios."}
@@ -36,8 +36,8 @@ export default function CaseStudiesSection({ locale = "en" }: Props) {
 
           <p className="max-w-xl text-xl leading-relaxed tracking-[-0.02em] text-neutral-600">
             {isZh
-              ? "我们关注可量化的运营改进，而非抽象的 AI 实验。"
-              : "We focus on measurable operational improvement, not abstract AI experiments."}
+              ? "以下案例展示了企业如何通过自动化、数据智能和 AI 辅助工作流提升效率、质量和决策速度。"
+              : "Explore examples of how organizations can use automation, analytics, and AI-assisted workflows to improve performance."}
           </p>
         </div>
 

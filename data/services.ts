@@ -1,23 +1,29 @@
 export const services = [
   {
-    id: 1,
-    title: "企业官网建设",
-    slug: "corporate-website",
-    description: "为企业打造专业、响应式、SEO 友好的品牌官网。",
-    features: ["响应式设计", "SEO 优化", "高性能页面", "内容结构规划"],
+    id: "ai-strategy",
+    title: "AI Strategy",
+    titleCn: "AI 战略咨询",
+    description:
+      "Identify high-value opportunities and define a practical roadmap for AI transformation.",
+    descriptionCn:
+      "识别高价值 AI 场景，并制定可落地的转型路线图。",
   },
   {
-    id: 2,
-    title: "系统开发",
-    slug: "system-development",
-    description: "根据业务流程定制后台管理系统、客户系统和业务平台。",
-    features: ["需求分析", "功能开发", "权限管理", "数据报表"],
+    id: "process-redesign",
+    title: "Process Redesign",
+    titleCn: "业务流程重构",
+    description:
+      "Redesign workflows, decision points and collaboration models around intelligent operations.",
+    descriptionCn:
+      "围绕智能化运营，重构流程、决策节点与协作模式。",
   },
   {
-    id: 3,
-    title: "品牌视觉设计",
-    slug: "brand-design",
-    description: "提供品牌形象、页面视觉和营销素材设计服务。",
-    features: ["品牌定位", "视觉规范", "页面设计", "宣传物料"],
+    id: "implementation",
+    title: "Implementation",
+    titleCn: "AI 系统落地",
+    description:
+      "Build and deploy AI-enabled systems that connect with existing business operations.",
+    descriptionCn:
+      "构建并部署与现有业务系统深度融合的 AI 解决方案。",
   },
 ]

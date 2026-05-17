@@ -8,7 +8,6 @@ export default function HomePage() {
     <main className="min-h-screen bg-white text-black">
       <Header />
       <Hero />
-      <StatsSection />
       <ContactSection />
     </main>
   )

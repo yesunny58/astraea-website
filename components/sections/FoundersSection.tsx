@@ -16,45 +16,64 @@ export default function FoundersSection({
       name: isZh ? "谭瑛" : "Cherry Tan",
       title: isZh ? "联合创始人 · 合伙人" : "Co‑Founder & Partner",
       image: "/founder1.jpg",
+      bio: isZh
+        ? "深耕战略咨询与跨境业务二十余年，专注企业全球化布局与组织升级。"
+        : "Over 20 years of experience in strategy and cross-border business, advising enterprises on global expansion and organizational transformation.",
     },
     {
       name: isZh ? "李莎" : "Lisa Li",
       title: isZh ? "联合创始人 · 合伙人" : "Co‑Founder & Partner",
       image: "/founder2.jpg",
+      bio: isZh
+        ? "专注品牌战略与资本市场沟通，长期为创始人提供战略顾问支持。"
+        : "Specializes in brand strategy and capital communication, supporting founders on positioning and sustainable growth.",
     },
-
     {
       name: isZh ? "叶志斌" : "Sunny Ye",
       title: isZh ? "联合创始人 · 合伙人" : "Co‑Founder & Partner",
       image: "/founder3.jpg",
+      bio: isZh
+        ? "长期从事企业运营与系统搭建，推动战略落地与执行效率提升。"
+        : "Focuses on operational systems and execution, enabling scalable and efficient growth.",
     },
-
   ]
 
   return (
-    <section className="px-6 md:px-12 lg:px-20 py-24 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <p className="text-sm tracking-widest uppercase text-neutral-500">
-            {eyebrow}
-          </p>
-        </div>
+    <section className="bg-white px-6">
+      <div className="mx-auto w-full max-w-7xl py-24">
+        
+        {/* Section Label — 与 PageHero 完全一致 */}
+        <p className="mb-16 text-sm font-semibold uppercase tracking-[0.3em] text-neutral-500">
+          {eyebrow}
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {founders.map((founder, index) => (
-            <div key={index} className="text-center">
-              <div className="overflow-hidden rounded-2xl">
+        {/* Founders Grid */}
+        <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-3">
+          {founders.map((founder) => (
+            <div key={founder.name}>
+              
+              {/* Image */}
+              <div className="aspect-[4/5] w-full overflow-hidden rounded-2xl bg-neutral-100">
                 <img
                   src={founder.image}
                   alt={founder.name}
-                  className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                  className="h-full w-full object-cover"
                 />
               </div>
-              <h3 className="mt-6 text-xl font-semibold">
+
+              {/* Name */}
+              <h3 className="mt-6 text-xl font-semibold tracking-tight text-black">
                 {founder.name}
               </h3>
-              <p className="mt-2 text-sm text-neutral-500">
+
+              {/* Title */}
+              <p className="mt-1 text-sm text-neutral-500">
                 {founder.title}
+              </p>
+
+              {/* Bio */}
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-600">
+                {founder.bio}
               </p>
             </div>
           ))}

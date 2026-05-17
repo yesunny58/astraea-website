@@ -1,51 +1,33 @@
 const steps = [
   {
     title: "Diagnose",
-    titleCn: "诊断",
     description:
       "Map business processes, identify friction points and quantify operational opportunities.",
-    descriptionCn:
-      "梳理业务流程，识别关键阻力点，并量化潜在的运营提升空间。",
   },
   {
     title: "Redesign",
-    titleCn: "重构",
     description:
       "Rebuild workflows, roles and decision logic around measurable business outcomes.",
-    descriptionCn:
-      "围绕可衡量的业务成果，重构流程、角色分工与决策逻辑。",
   },
   {
     title: "Implement",
-    titleCn: "实施",
     description:
       "Deliver intelligent systems, automation tools and adoption mechanisms.",
-    descriptionCn:
-      "交付智能系统、自动化工具以及组织采用机制。",
   },
   {
     title: "Optimize",
-    titleCn: "优化",
     description:
       "Measure performance, iterate models and continuously improve operations.",
-    descriptionCn:
-      "衡量系统表现，持续迭代模型，不断优化运营效果。",
   },
 ]
 
-type Props = {
-  locale?: "en" | "zh"
-}
-
-export default function MethodologySection({ locale = "en" }: Props) {
-  const isZh = locale === "zh"
-
+export default function MethodologySection() {
   return (
     <section id="methodology" className="border-b border-neutral-200 bg-white">
       <div className="mx-auto max-w-[1440px] px-6 py-8 md:px-12 lg:px-16">
-        <div className="mb-10">
+        <div className="mb-8">
           <h2 className="text-[clamp(1.75rem,5.5vw,3.75rem)] font-extrabold tracking-[-0.03em] text-black leading-[0.96] max-w-[70ch] break-words">
-            {isZh ? "方法步骤" : "STEPS"}
+            Methodology
           </h2>
         </div>
 
@@ -55,16 +37,14 @@ export default function MethodologySection({ locale = "en" }: Props) {
               key={step.title}
               className="grid gap-8 py-4 md:grid-cols-[96px_1fr_1.4fr] md:items-start"
             >
-              <div className="text-lg text-neutral-400">
-                0{index + 1}
-              </div>
+              <div className="text-lg text-neutral-400">0{index + 1}</div>
 
               <h3 className="text-2xl font-semibold tracking-[-0.02em] text-black md:text-5xl">
-                {isZh ? step.titleCn : step.title}
+                {step.title}
               </h3>
 
               <p className="text-xl leading-relaxed tracking-[-0.01em] text-neutral-600 md:text-2xl">
-                {isZh ? step.descriptionCn : step.description}
+                {step.description}
               </p>
             </div>
           ))}

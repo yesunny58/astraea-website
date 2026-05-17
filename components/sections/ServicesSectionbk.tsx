@@ -1,46 +1,52 @@
-import { getServices } from "@/lib/services"
+const services = [
+  {
+    title: "AI Strategy",
+    description:
+      "Identify high-value opportunities and define a practical roadmap for AI transformation.",
+  },
+  {
+    title: "Process Redesign",
+    description:
+      "Redesign workflows, decision points and collaboration models around intelligent operations.",
+  },
+  {
+    title: "Implementation",
+    description:
+      "Build and deploy AI-enabled systems that connect with existing business operations.",
+  },
+]
 
-type Props = {
-  locale?: "en" | "zh"
-}
-
-export default function ServicesSection({ locale = "en" }: Props) {
-  const services = getServices()
-  const isZh = locale === "zh"
-
+export default function ServicesSection() {
   return (
     <section id="services" className="bg-white">
-      <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 lg:px-16">
+      <div className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-14 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-neutral-500">
-            {isZh ? "服务项目" : "Services Offering"}
+            Services
           </p>
 
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-black md:text-5xl">
-            {isZh
-              ? "从战略规划到运营落地。"
-              : "From strategy to operational implementation."}
+            From strategy to operational implementation.
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-neutral-600">
-            {isZh
-              ? "我们与企业管理层合作，将 AI 能力真正嵌入日常运营。"
-              : "We work with leadership teams to move beyond isolated experiments and build AI capabilities into daily operations."}
+            We work with leadership teams to move beyond isolated experiments
+            and build AI capabilities into daily operations.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((service) => (
             <div
-              key={service.id}
+              key={service.title}
               className="rounded-3xl border border-neutral-200 p-8 transition hover:border-black"
             >
               <h3 className="text-2xl font-semibold tracking-tight text-black">
-                {isZh ? service.titleCn : service.title}
+                {service.title}
               </h3>
 
               <p className="mt-5 text-base leading-7 text-neutral-600">
-                {isZh ? service.descriptionCn : service.description}
+                {service.description}
               </p>
             </div>
           ))}

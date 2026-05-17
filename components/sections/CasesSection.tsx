@@ -1,46 +1,81 @@
-export default function CasesSection() {
+import { getCases } from "@/lib/cases"
+
+type Props = {
+  locale?: "en" | "zh"
+}
+
+export default function CaseStudiesSection({ locale = "en" }: Props) {
+  const cases = getCases()
+  const isZh = locale === "zh"
+
   return (
-    <section className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-12 max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
-            Cases
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl">
-            精选案例
-          </h2>
-          <p className="mt-4 text-base leading-7 text-gray-600">
-            我们帮助企业构建高性能、可扩展、易维护的数字化产品。
+    <section id="cases" className="border-b border-neutral-200 bg-neutral-50">
+      <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 lg:px-16">
+
+        {/* Header */}
+        <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-center">
+          <div>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500">
+              {isZh ? "案例" : "Case Studies"}
+            </p>
+
+            <h2
+              className={`max-w-4xl font-medium tracking-tight text-black ${
+                isZh
+                  ? "text-3xl md:text-5xl leading-snug"
+                  : "text-4xl md:text-6xl"
+              }`}
+            >
+              {isZh ? (
+                <>
+                  真实业务场景中的
+                  <br className="hidden md:block" />
+                  AI实践成果。
+                </>
+              ) : (
+                "Practical AI results across real business scenarios."
+              )}
+            </h2>
+          </div>
+
+          <p className="max-w-xl text-xl leading-relaxed tracking-[-0.02em] text-neutral-600">
+            {isZh
+              ? "我们关注可量化的运营改进，而非抽象的 AI 实验。"
+              : "We focus on measurable operational improvement, not abstract AI experiments."}
           </p>
         </div>
 
+        {/* Case Grid */}
         <div className="grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "企业官网建设",
-              desc: "为品牌打造兼具视觉表现与转化能力的官方网站。",
-            },
-            {
-              title: "SaaS 产品平台",
-              desc: "从产品架构、前端界面到后台系统的一体化开发。",
-            },
-            {
-              title: "数字化运营系统",
-              desc: "帮助企业提升内部流程效率与业务数据管理能力。",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-gray-200 bg-gray-50 p-6 transition hover:-translate-y-1 hover:shadow-lg"
+          {cases.map((item) => (
+            <article
+              key={item.id}
+              className="flex min-h-[420px] flex-col justify-between border border-neutral-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="mb-6 h-40 rounded-xl bg-gradient-to-br from-blue-100 to-indigo-100" />
-              <h3 className="text-lg font-semibold text-gray-950">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-gray-600">
-                {item.desc}
-              </p>
-            </div>
+              <div>
+                <div className="mb-8 inline-flex rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-500">
+                  {isZh ? item.categoryCn : item.category}
+                </div>
+
+                <h3 className="mb-6 text-3xl font-semibold tracking-[-0.04em] text-black">
+                  {isZh ? item.titleCn : item.title}
+                </h3>
+
+                <p className="text-lg leading-relaxed tracking-[-0.02em] text-neutral-600">
+                  {isZh ? item.summaryCn : item.summary}
+                </p>
+              </div>
+
+              <div className="mt-12 border-t border-neutral-200 pt-6">
+                <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">
+                  {isZh ? "成果" : "Result"}
+                </p>
+
+                <p className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-black">
+                  {isZh ? item.resultCn : item.result}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </div>
