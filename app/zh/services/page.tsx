@@ -10,7 +10,7 @@ export default function ZhServicesPage() {
 
       <PageHero
         locale="zh"
-        eyebrow="服务：将混乱改造成秩序"
+        eyebrow="将混乱改造成秩序"
         title={
           <>
             从战略到落地，
