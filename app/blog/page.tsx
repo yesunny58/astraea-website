@@ -1,5 +1,4 @@
 import Header from "@/components/layout/Header"
-import PageHero from "@/components/layout/PageHero"
 import PostsSection from "@/components/sections/PostsSection"
 import ContactSection from "@/components/sections/ContactSection"
 
