@@ -3,7 +3,7 @@ import Header from "@/components/layout/Header"
 export default function TermsZH() {
   return (
     <main className="bg-white text-neutral-900">
-      <header locale = "zh" />
+      <Header locale="zh" />
       <div className="mx-auto max-w-3xl px-6 py-24">
         <h1 className="text-3xl font-bold tracking-tight">
           使用条款
