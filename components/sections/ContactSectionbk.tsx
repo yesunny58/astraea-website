@@ -12,8 +12,6 @@ const content: Record<
     description: string
     email: string
     tel: string
-    privacy: string
-    terms: string
   }
 > = {
   en: {
@@ -22,9 +20,7 @@ const content: Record<
     description:
       "Tell us about your organization, operational challenges and AI ambitions. We will help you identify the right starting point.",
     email: "sunny@astraea.it.com",
-    tel: "+852 6052 9320",
-    privacy: "Privacy",
-    terms: "Terms",
+    tel: "+852 6052 9320"
   },
   zh: {
     eyebrow: "联系",
@@ -33,8 +29,6 @@ const content: Record<
       "告诉我们你的企业情况、当前面临的运营挑战，以及你希望通过 AI 实现的目标。我们会帮助你找到最合适的切入点。",
     email: "sunny@astraea.it.com",
     tel: "+852 6052 9320",
-    privacy: "隐私政策",
-    terms: "使用条款",
   },
 }
 
@@ -43,13 +37,9 @@ export default function ContactSection({
 }: ContactSectionProps) {
   const text = content[locale]
   const telHref = text.tel.replace(/[^\d+]/g, "")
-  const year = new Date().getFullYear()
-
   return (
     <section id="contact" className="bg-black text-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2">
-        
-        {/* Left */}
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-neutral-400">
             {text.eyebrow}
@@ -60,56 +50,24 @@ export default function ContactSection({
           </h2>
         </div>
 
-        {/* Right */}
         <div>
           <p className="text-lg leading-8 text-neutral-300">
             {text.description}
           </p>
-
           <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
-            
             <a
               href={`mailto:${text.email}`}
               className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold text-black transition hover:bg-neutral-200"
             >
               {text.email}
             </a>
-
             <a
               href={`tel:${telHref}`}
               className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold text-black transition hover:bg-neutral-200"
             >
               {text.tel}
             </a>
-
           </div>
-        </div>
-      </div>
-
-      {/* Minimal Tech Footer */}
-      <div className="border-t border-neutral-800">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-neutral-500 sm:flex-row">
-          
-          <div>
-            © {year} Astraea Advisory Limited
-          </div>
-
-          <div className="flex gap-6">
-            <a
-              href={locale === "zh" ? "/zh/privacy" : "/privacy"}
-              className="transition hover:text-white"
-            >
-              {text.privacy}
-            </a>
-
-            <a
-              href={locale === "zh" ? "/zh/terms" : "/terms"}
-              className="transition hover:text-white"
-            >
-              {text.terms}
-            </a>
-          </div>
-
         </div>
       </div>
     </section>
