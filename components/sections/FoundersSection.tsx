@@ -21,16 +21,16 @@ export default function FoundersSection({
       title: isZh ? "合伙人" : "Partner",
       image: "/founder1.jpg",
       bio: isZh
-        ? "曾任职 IBM 与 Cisco，参与企业战略与跨区域协同项目，长期负责复杂环境下的组织协作与落地推进。"
-        : "Formerly with IBM and Cisco, involved in enterprise strategy and cross‑regional coordination initiatives, leading execution in complex operating environments.",
+        ? "曾任职 IBM, 联想 与 Cisco，参与企业战略与跨区域协同项目，长期负责复杂环境下的组织协作与落地推进。"
+        : "Formerly with IBM,Lenovo and Cisco, involved in enterprise strategy and cross‑regional coordination initiatives, leading execution in complex operating environments.",
     },
     {
       name: isZh ? "李莎" : "Lisa Li",
       title: isZh ? "合伙人" : "Partner",
       image: "/founder2.jpg",
       bio: isZh
-        ? "曾任职 IBM，专注品牌战略与高管定位，在结构化表达与长期发展路径设计方面拥有丰富经验。"
-        : "Formerly with IBM, specializing in brand strategy and executive positioning, with experience in structured communication and long‑term growth alignment.",
+        ? "曾任职 IBM与联想，专注品牌战略与高管定位，在结构化表达与长期发展路径设计方面拥有丰富经验。"
+        : "Formerly with IBM and Lenovo, specializing in brand strategy and executive positioning, with experience in structured communication and long‑term growth alignment.",
     },
     {
       name: isZh ? "叶志斌" : "Sunny Ye",
