@@ -25,9 +25,9 @@ export default function FoundersSection({
         : "Formerly with IBM,Lenovo and Cisco, involved in enterprise strategy and cross‑regional coordination initiatives, leading execution in complex operating environments.",
     },
     {
-      name: isZh ? "李莎" : "Lisa Li",
+      name: isZh ? "李xx" : "Lixx",
       title: isZh ? "合伙人" : "Partner",
-      image: "/founder2.jpg",
+      image: "/founder3.jpg",
       bio: isZh
         ? "曾任职 IBM 与 联想，专注品牌战略与高管定位，在结构化表达与长期发展路径设计方面拥有丰富经验。"
         : "Formerly with IBM and Lenovo, specializing in brand strategy and executive positioning, with experience in structured communication and long‑term growth alignment.",
