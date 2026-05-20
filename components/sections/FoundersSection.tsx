@@ -27,7 +27,7 @@ export default function FoundersSection({
     {
       name: isZh ? "李xx" : "Lixx",
       title: isZh ? "合伙人" : "Partner",
-      image: "/founder3.jpg",
+      image: "/founder3-bk.jpg",
       bio: isZh
         ? "曾任职 IBM 与 联想，专注品牌战略与高管定位，在结构化表达与长期发展路径设计方面拥有丰富经验。"
         : "Formerly with IBM and Lenovo, specializing in brand strategy and executive positioning, with experience in structured communication and long‑term growth alignment.",
